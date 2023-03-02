@@ -18,4 +18,5 @@ University of Florida <br/>
 Gainesville, FL, 32601<br/>
 
 Email: [riteshchowdhry@ufl.edu](mailto:riteshchowdhry@ufl.edu)
+<br/>
 Reach out to me on LinkedIn: [Ritesh313](https://www.linkedin.com/in/ritesh313/)
