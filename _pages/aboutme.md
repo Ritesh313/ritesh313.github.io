@@ -16,24 +16,18 @@ Hi! My name is Ritesh Chowdhry. I'm currently pursuing a [Ph.D. in Machine Learn
 
 ## Education
 
-### Doctor of Philosophy, Electrical and Computer Engineering
+### University of Florida, Gainesville, FL 
+#### Doctor of Philosophy, Electrical and Computer Engineering 
+August 2021 - Present <br/>
 
-#### University of Florida
+#### Master of Science, Electrical and Computer Engineering
+August 2019 - May 2021 <br/>
 
-##### August 2021 - Present
+### Kurukshetra University, Kurukshetra, HR, India 
+#### Bachelor of Science, Electronics and Communications Engineering 
+August 2014 - August 2018 <br/>
 
-### Master of Science, Electrical and Computer Engineering
-
-#### University of Florida
-
-##### August 2019 - May 2021
-
-### Bachelor of Science, Electronics and Communications Engineering 
-
-#### Kurukshetra University
-
-##### August 2014 - August 2018
-
+## Skills
 ### Programming Languages
 * Python
 * C/C++
