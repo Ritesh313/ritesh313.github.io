@@ -6,7 +6,7 @@ excerpt: "Ritesh Chowdhry is a PhD student in University of Florida"
 layout: single
 author_profile: true
 sitemap: true
-modified: 2023-02-13
+modified: 2023-03-01
 toc: False
 ---
 Hi! My name is Ritesh Chowdhry. I'm currently pursuing a [Ph.D. in Machine Learning](https://faculty.eng.ufl.edu/machine-learning/2021/03/welcome-new-phd-student-ritesh-chowdhry/) at the University of Florida (UF) in the Department of Electrical and Computer Engineering (ECE). I work under
