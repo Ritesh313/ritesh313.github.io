@@ -20,7 +20,7 @@ title                    : "Ritesh Chowdhry's Personal Page"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Ritesh Chowdhry"
-description              : "Doctoral Research Student in Machine Learning and Sensing Lab"
+description              : "Doctoral Student Researcher in Machine Learning and Sensing Lab"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "Ritesh313/ritesh313.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Ritesh Chowdhry"
   avatar           : "/images/profile_picture.jpg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Doctoral Research Student in Machine Learning and Sensing Lab"
+  bio              : "Doctoral Student Researcher in Machine Learning and Sensing Lab"
   location         : "Gainesville, FL"
   email            :
   links:
