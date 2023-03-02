@@ -1,7 +1,15 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "About Me"
+    url: /aboutme/
+  - title: "Research"
+    url: /research/
+  - title: "Key Projects"
+    url: /key_projects/
+  - title: "Curriculum Vitae"
+    url: /documents/Ritesh_CV.pdf
+  - title: "Connect"
+    url: /connect/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
