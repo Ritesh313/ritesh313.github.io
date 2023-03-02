@@ -105,7 +105,7 @@ analytics:
 # Site Author
 author:
   name             : "Ritesh Chowdhry"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/profile_picture.jpg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Doctoral Research Student in Machine Learning and Sensing Lab"
   location         : "Gainesville, FL"
   email            :
