@@ -2,38 +2,34 @@
 permalink: /aboutme/
 title: "About Me"
 
-excerpt: "Ritesh Chowdhry is a PhD student in University of Florida"
+excerpt: "Ritesh Chowdhry is a PhD candidate at University of Florida"
 layout: single
 author_profile: true
 sitemap: true
-modified: 2023-03-01
+modified: 2026-02-04
 toc: False
 ---
-Hi! My name is Ritesh Chowdhry. I'm currently pursuing a [Ph.D. in Machine Learning](https://faculty.eng.ufl.edu/machine-learning/2021/03/welcome-new-phd-student-ritesh-chowdhry/) at the University of Florida (UF) in the Department of Electrical and Computer Engineering (ECE). I work under
-[Dr. Alina Zare](https://faculty.eng.ufl.edu/machine-learning/people/faculty/) in the
-[Machine Learning and Sensing Lab](https://faculty.eng.ufl.edu/machine-learning/machine-learning-sensing-lab/) to research and develop novel algorithms for a variety of applications.<br/>
+I am a PhD candidate in Electrical and Computer Engineering at the University of Florida. My research interests lie at the intersection of **machine learning**, **computer vision**, and **remote sensing**, with a focus on developing self-supervised learning methods for hyperspectral imagery.
 
+My doctoral thesis, *Beyond Band Masking: Decomposition-Guided Self-Supervised Learning for Hyperspectral Images*, explores novel approaches to learning representations from hyperspectral data using Vision Transformers and Masked Autoencoders. I am particularly interested in applying these methods to ecological monitoring and precision agriculture applications.
+
+I have experience developing large-scale datasets, building open-source tools for ecological research, and applying deep learning to challenging real-world problems in remote sensing and computer vision.
 
 ## Education
 
 ### University of Florida, Gainesville, FL 
-#### Doctor of Philosophy, Electrical and Computer Engineering 
-August 2021 - Present <br/>
+**Ph.D. in Electrical and Computer Engineering** • August 2021 - Present  
+*Thesis:* Beyond Band Masking: Decomposition-Guided Self-Supervised Learning for Hyperspectral Images
 
-#### Master of Science, Electrical and Computer Engineering
-August 2019 - May 2021 <br/>
+**M.S. in Electrical and Computer Engineering** • August 2019 - August 2021
 
 ### Kurukshetra University, Kurukshetra, HR, India 
-#### Bachelor of Science, Electronics and Communications Engineering 
-August 2014 - August 2018 <br/>
+**B.S. in Electronics and Communication Engineering** • August 2014 - August 2018
 
 ## Skills
-### Programming Languages
-* Python
-* C/C++
 
-###  Tools: 
-* PyTorch 
-* TensorFlow 
-* Slurm 
-* Linux
+**Programming Languages:** Python, C++, SQL
+
+**Tools & Frameworks:** PyTorch, TensorFlow, Slurm, Linux, ROS, Git, Comet, Wandb, AWS Bedrock, Jupyter Notebooks
+
+**Hardware:** HPC, LiDAR, Raspberry Pi, Jetson Nano, Bluetooth/Wi-Fi/GSM modules, ultrasonic, infrared and moisture sensors

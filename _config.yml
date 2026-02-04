@@ -20,7 +20,7 @@ title                    : "Ritesh Chowdhry"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Ritesh Chowdhry"
-description              : "Doctoral Student Researcher in Machine Learning and Sensing Lab"
+description              : "PhD Candidate in Electrical and Computer Engineering focusing on self-supervised learning for hyperspectral imagery"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "Ritesh313/ritesh313.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -72,6 +72,9 @@ algolia:
 google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
+# Copy button for code blocks (new feature)
+enable_copy_code_button: true
+
 # SEO Related
 google_site_verification :
 bing_site_verification   :
@@ -106,7 +109,7 @@ analytics:
 author:
   name             : "Ritesh Chowdhry"
   avatar           : "/images/profile_picture.jpg"# path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Doctoral Student Researcher in Machine Learning and Sensing Lab"
+  bio              : "PhD Candidate • Machine Learning & Computer Vision • University of Florida"
   location         : "Gainesville, FL"
   email            :
   links:

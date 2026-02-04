@@ -3,38 +3,39 @@ title: "Ritesh Chowdhry"
 layout: splash
 header:
   overlay_color: "#000"
-  overlay_filter: "0.4"
+  overlay_filter: "0.5"
   overlay_image: /images/wallpaper.jpeg
-  cta_label: "About"
+  cta_label: "About Me"
   cta_url: "/aboutme/"
-  caption: "Photo by LEANDRO BIANCHINI from Burst" # Photo: Lake Michigan" 
-excerpt: "Doctoral Student Researcher at University of Florida"
-intro:
-  - excerpt: “I’ve missed more than 9,000 shots in my career. I’ve lost almost 300 games. 26 times I’ve been trusted to take the game winning shot and missed. I’ve failed over and over and over again in my life, and that is why I succeed.” —Michael Jordan
+  caption: "Photo by LEANDRO BIANCHINI from Burst"
+excerpt: "PhD Candidate in Electrical and Computer Engineering<br>University of Florida<br><small>Machine Learning • Computer Vision • Hyperspectral Imaging</small>"
 feature_row:
   - image_path: /images/research.jpeg
     title: "Research"
-    # excerpt: "My research projects"
-    btn_label: "Learn more"
+    excerpt: "Self-supervised learning for hyperspectral imagery and ecological applications"
+    btn_label: "View Research"
     btn_class: "btn--primary"
     url: "/research/"
-    caption: "Image by Gerd Altmann from Pixabay"
   - image_path: /images/robot.jpeg
-    title: "Key Projects"
-    # excerpt: "All The Projects I have worked on"
-    btn_label: "Check it out"
+    title: "Projects"
+    excerpt: "Open-source tools and datasets for machine learning and computer vision"
+    btn_label: "View Projects"
     btn_class: "btn--primary"
     url: "/key_projects/"
-    caption: "Photo by Marília Castelli on Unsplash"
   - image_path: /images/resume.jpeg
-    title: "Curriculum Vitae"
-    # excerpt: "My CV"
-    btn_label: "View CV"
+    title: "Publications"
+    excerpt: "Journal papers, conference presentations, and datasets"
+    btn_label: "View Publications"
+    btn_class: "btn--primary"
+    url: "/publications/"
+feature_row2:
+  - title: "Curriculum Vitae"
+    excerpt: "View my complete academic and professional experience"
+    btn_label: "Download CV"
     btn_class: "btn--primary"
     url: "/documents/Ritesh_CV.pdf"
-    caption: "Photo by Markus Winkler from Burst"
 ---
 
-{% include feature_row id="intro" type="center" %}
-
 {% include feature_row %}
+
+{% include feature_row id="feature_row2" type="center" %}

@@ -6,21 +6,23 @@ excerpt: "Ritesh Chowdhry Research Projects"
 layout: single
 author_profile: true
 sitemap: true
-modified: 2023-03-01
+modified: 2026-02-04
 ---
 
-## Doctoral Student Researcher, Machine Learning and Sensing Lab, University of Florida, Gainesville, FL
+My research focuses on developing self-supervised learning methods for hyperspectral imagery, with applications in ecological monitoring and precision agriculture. I work on creating methods that can learn from large amounts of unlabeled remote sensing data to improve performance on downstream tasks.
 
-### Tree Species Classification using Hyperspectral Imagery         Aug. 2021 - Present
+## Self-Supervised Learning for Hyperspectral Imagery
 
-- Developed a semi-supervised classification approach based on pseudo-labeling to utilize a significant amount of unlabeled data (from NEON) containing hyperspectral images of tree crowns
-created using Deepforest.
-- Leveraged statistical analysis techniques, such as pixel average and covariance calculations, to derive valuable insights into the differences in hyperspectral signatures across different tree species. The analysis included data from various North American forest sites starting from the year 2018.
-- Employed an ecology-informed hierarchical spectral-spatial attention network to enable hyperspectral image classification of tree species, leading to a marked improvement in classification
-accuracy.
+Hyperspectral images capture hundreds of spectral bands, providing rich information about materials and vegetation. However, labeled hyperspectral data is scarce and expensive to obtain. My doctoral research explores how we can leverage self-supervised learning techniques to learn useful representations from large amounts of unlabeled hyperspectral data.
 
-### Signals in the Soil Analysis using Hyperspectral Imagery Aug. 2021 - Present
+I'm particularly interested in adapting modern self-supervised learning approaches, such as Vision Transformers and Masked Autoencoders, to work effectively with the unique characteristics of hyperspectral data. The high dimensionality and spectral correlation in hyperspectral imagery present interesting challenges that require novel approaches beyond what works for standard RGB images.
 
-- Compiled a comprehensive dataset of hyperspectral images of plant roots, spanning multiple species, within minirhizotron boxes, for rigorous plant physiology research.
-- Developed a two-stage regression model using ResNet architecture to predict water potential/content, a key plant physiology trait.
-- Implemented an efficient semantic segmentation pipeline for root and soil segmentation in various plant species. Incorporated active learning methods to augment the dataset and enhance model performance. Utilized a pre-trained Unet model trained on the PRMI dataset) and also evaluated conventional hyperspectral unmixing algorithms to segment roots from soil using spectral information.
+**Applications:** Ecological monitoring, tree species classification, remote sensing analysis
+
+## Hyperspectral Imaging for Plant-Soil Systems
+
+I'm also working on using hyperspectral imaging to understand plant-soil interactions at unprecedented spatial resolutions. Traditional soil moisture sensors provide point measurements, but hyperspectral imaging can potentially map soil water content at sub-millimeter resolution across entire root systems.
+
+This research involves developing deep learning methods to predict pixel-level soil moisture from hyperspectral signatures, while handling challenges like spectral interference from plant roots. As part of this work, I contributed to the [HyperPRI dataset](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/MAYDHT) to enable further research in this area.
+
+**Applications:** Precision agriculture, plant phenotyping, understanding water dynamics in rhizosphere systems
