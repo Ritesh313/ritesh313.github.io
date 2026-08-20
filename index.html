@@ -1,41 +1,596 @@
----
-title: "Ritesh Chowdhry"
-layout: splash
-header:
-  overlay_color: "#000"
-  overlay_filter: "0.5"
-  overlay_image: /images/wallpaper.jpeg
-  cta_label: "About Me"
-  cta_url: "/aboutme/"
-  caption: "Photo by LEANDRO BIANCHINI from Burst"
-excerpt: "PhD Candidate in Electrical and Computer Engineering<br>University of Florida<br><small>Machine Learning • Computer Vision • Hyperspectral Imaging</small>"
-feature_row:
-  - image_path: /images/research.jpeg
-    title: "Research"
-    excerpt: "Self-supervised learning for hyperspectral imagery and ecological applications"
-    btn_label: "View Research"
-    btn_class: "btn--primary"
-    url: "/research/"
-  - image_path: /images/robot.jpeg
-    title: "Projects"
-    excerpt: "Open-source tools and datasets for machine learning and computer vision"
-    btn_label: "View Projects"
-    btn_class: "btn--primary"
-    url: "/key_projects/"
-  - image_path: /images/resume.jpeg
-    title: "Publications"
-    excerpt: "Journal papers, conference presentations, and datasets"
-    btn_label: "View Publications"
-    btn_class: "btn--primary"
-    url: "/publications/"
-feature_row2:
-  - title: "Curriculum Vitae"
-    excerpt: "View my complete academic and professional experience"
-    btn_label: "Download CV"
-    btn_class: "btn--primary"
-    url: "/documents/Ritesh_CV.pdf"
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ritesh Chowdhry</title>
+<meta name="description" content="Ritesh Chowdhry, PhD candidate in Electrical and Computer Engineering at the University of Florida. Self-supervised learning for hyperspectral imagery, and benchmarking and routing large language models.">
 
-{% include feature_row %}
+<style>
+/* ==================================================================
+   Ritesh Chowdhry - personal site
+   Single file. Edit content in the <article> blocks near the bottom.
+   ================================================================== */
 
-{% include feature_row id="feature_row2" type="center" %}
+:root {
+  --page:          #eef0f3;   /* page background behind the cards */
+  --card:          #ffffff;   /* sidebar + main panel */
+  --tile:          #f7f8fa;   /* inner tiles */
+  --text:          #23262b;
+  --muted:         #6b7280;
+  --rule:          #e4e7ec;
+  --heading:       #1f2937;
+  --link:          #1a5fb4;
+  --accent:        #f0a35e;   /* light orange: bars, borders, dots */
+  --accent-strong: #c9711f;   /* orange for text, needs contrast on white */
+  --shadow:        0 1px 2px rgba(16,24,40,.05), 0 10px 30px rgba(16,24,40,.07);
+  --radius:        16px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--link); }
+
+/* ---------------- layout ---------------- */
+
+.layout {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 34px 24px 60px;
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+
+/* ---------------- sidebar ---------------- */
+
+.sidebar {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 24px 24px;
+  text-align: center;
+  position: sticky;
+  top: 34px;
+}
+
+.avatar {
+  width: 132px;
+  height: 132px;
+  border-radius: 22px;
+  object-fit: cover;
+  background: var(--tile);
+  border: 1px solid var(--rule);
+}
+
+.sidebar h1 {
+  margin: 18px 0 10px;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  color: var(--heading);
+}
+
+.badge {
+  display: inline-block;
+  background: var(--tile);
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 13px;
+  padding: 4px 14px;
+  border-radius: 999px;
+}
+
+.sidebar hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 22px 0;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  text-align: left;
+  margin-bottom: 17px;
+}
+.info .ico {
+  flex: 0 0 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--tile);
+  border: 1px solid var(--rule);
+  display: grid;
+  place-items: center;
+  color: var(--accent-strong);
+}
+.info .ico svg { width: 17px; height: 17px; }
+.info .lbl {
+  font-size: 10.5px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.info .val { font-size: 14.5px; line-height: 1.4; word-break: break-word; }
+.info .val a { text-decoration: none; }
+.info .val a:hover { text-decoration: underline; }
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+.social a { color: var(--muted); display: grid; place-items: center; }
+.social a:hover { color: var(--accent-strong); }
+.social svg { width: 19px; height: 19px; }
+
+/* ---------------- main panel ---------------- */
+
+.panel {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  min-height: 620px;
+}
+
+.tabs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--tile);
+  border-left: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0 var(--radius) 0 var(--radius);
+  padding: 16px 22px;
+  display: flex;
+  gap: 4px;
+}
+.tabs button {
+  background: none;
+  border: 0;
+  font: inherit;
+  font-size: 14.5px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 8px;
+}
+.tabs button:hover { color: var(--text); }
+.tabs button.on { color: var(--accent-strong); font-weight: 600; }
+
+article {
+  display: none;
+  padding: 44px 46px 46px;
+}
+article.on { display: block; }
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 29px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: var(--heading);
+}
+.bar {
+  width: 42px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 3px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 650;
+  color: var(--heading);
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+
+h4 {
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 38px 0 18px;
+}
+
+p { margin: 0 0 15px; }
+p:last-child { margin-bottom: 0; }
+
+.prose { max-width: 68ch; }
+
+.meta { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+
+/* ---------------- tiles ---------------- */
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  gap: 18px;
+}
+
+.tile {
+  background: var(--tile);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+}
+.tile h3 { font-size: 16.5px; }
+.tile p { font-size: 14.8px; margin-bottom: 12px; }
+.tile .go {
+  margin-top: auto;
+  font-size: 14px;
+  font-weight: 550;
+  text-decoration: none;
+}
+.tile .go:hover { text-decoration: underline; }
+
+.tile.edge { border-left: 3px solid var(--accent); }
+
+/* ---------------- timeline ---------------- */
+
+.timeline { list-style: none; margin: 0; padding: 0 0 0 28px; border-left: 2px solid var(--rule); }
+.timeline li { position: relative; padding-bottom: 30px; }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -36px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--card);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.timeline h3 { margin-bottom: 4px; }
+.timeline p { font-size: 15.2px; }
+
+/* ---------------- publications ---------------- */
+
+.pubs { list-style: none; margin: 0; padding: 0; }
+.pubs li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 15.2px;
+}
+.pubs li:last-child { border-bottom: 0; padding-bottom: 0; }
+.pubs .venue { color: var(--muted); }
+
+/* ---------------- responsive ---------------- */
+
+@media (max-width: 940px) {
+  .layout { grid-template-columns: 1fr; padding-top: 22px; gap: 20px; }
+  .sidebar { position: static; }
+  .tabs {
+    position: static;
+    border-radius: var(--radius) var(--radius) 0 0;
+    border-left: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 12px;
+  }
+  article { padding: 30px 26px 34px; }
+  h2 { font-size: 25px; }
+}
+</style>
+</head>
+
+<body>
+<div class="layout">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+    <img class="avatar" src="images/profile.jpg" alt="Ritesh Chowdhry">
+    <h1>Ritesh Chowdhry</h1>
+    <span class="badge">PhD Candidate, ECE</span>
+
+    <hr>
+
+    <div class="info">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+      <div>
+        <div class="lbl">Email</div>
+        <div class="val"><a href="mailto:riteshchowdhry@ufl.edu">riteshchowdhry@ufl.edu</a></div>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div>
+        <div class="lbl">Location</div>
+        <div class="val">Gainesville, Florida</div>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></div>
+      <div>
+        <div class="lbl">Curriculum Vitae</div>
+        <div class="val"><a href="documents/Ritesh_CV.pdf">Download PDF</a></div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="social">
+      <a href="https://github.com/Ritesh313" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.8 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0C17.5 4.7 18.5 5 18.5 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.8-5.8 7.8-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg></a>
+      <a href="https://www.linkedin.com/in/ritesh313/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95 4.02 0 4.76 2.5 4.76 5.76V21h-4v-5.6c0-1.34-.03-3.06-1.9-3.06-1.9 0-2.2 1.45-2.2 2.96V21h-4z"/></svg></a>
+    </div>
+  </aside>
+
+  <!-- ============ MAIN PANEL ============ -->
+  <main class="panel">
+
+    <nav class="tabs">
+      <button data-tab="about">About</button>
+      <button data-tab="research">Research</button>
+      <button data-tab="experience">Experience</button>
+      <button data-tab="projects">Projects</button>
+      <button data-tab="publications">Publications</button>
+    </nav>
+
+    <!-- ---------- ABOUT ---------- -->
+    <article data-page="about">
+      <h2>About Me</h2>
+      <div class="bar"></div>
+
+      <div class="prose">
+        <p>I am a PhD candidate in Electrical and Computer Engineering at the University of Florida, working in the Machine Learning and Sensing Lab. My research is on self-supervised learning for high-dimensional sensing data, mainly hyperspectral imagery, where labels are scarce and the structure of the data does not look much like natural images.</p>
+
+        <p>More recently I have worked on evaluating and routing large language models under real cost and latency constraints, during two Applied Scientist internships at Amazon. Alongside both, I build open-source datasets and tools so other researchers can use this kind of data without absorbing the preprocessing burden first.</p>
+
+        <p>I am currently looking for applied scientist and research scientist roles.</p>
+      </div>
+
+      <h4>What I Work On</h4>
+      <div class="tiles">
+
+        <div class="tile">
+          <h3>Self-Supervised Learning</h3>
+          <p>Masked autoencoders for hyperspectral imagery, where masking whole spectral components beats masking individual bands.</p>
+          <a class="go" href="#research">Read more &rarr;</a>
+        </div>
+
+        <div class="tile">
+          <h3>LLM Benchmarking &amp; Routing</h3>
+          <p>Measuring correctness, cost, and latency together, then routing each query to the model that best balances all three.</p>
+          <a class="go" href="#research">Read more &rarr;</a>
+        </div>
+
+        <div class="tile">
+          <h3>Remote Sensing for Ecology</h3>
+          <p>Multimodal NEON datasets and pipelines for tree species classification, released as open-source packages.</p>
+          <a class="go" href="#projects">Read more &rarr;</a>
+        </div>
+
+        <div class="tile">
+          <h3>Hyperspectral Plant-Soil Imaging</h3>
+          <p>Pixel-level soil water content mapping in rhizosphere systems at roughly half-millimeter resolution.</p>
+          <a class="go" href="#research">Read more &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- ---------- RESEARCH ---------- -->
+    <article data-page="research">
+      <h2>Research</h2>
+      <div class="bar"></div>
+
+      <div class="prose">
+        <h3>Self-Supervised Learning for Hyperspectral Imagery</h3>
+        <p class="meta">Doctoral thesis &middot; Machine Learning and Sensing Lab</p>
+        <p>Hyperspectral images carry hundreds of spectral bands per pixel, and labels are scarce and expensive. Masked autoencoders are the obvious way to learn from the unlabeled majority, but they were designed for natural images, where masking a patch removes information that genuinely has to be inferred.</p>
+        <p>Spectral bands do not behave that way. Adjacent bands are highly correlated, so masking one is trivially recoverable from its neighbors. Isolated absorption features are the opposite: nothing else predicts them, so masking one makes reconstruction impossible. Band-level masking therefore produces a training signal of wildly uneven difficulty, most of which teaches the model nothing.</p>
+        <p>My thesis, <em>Beyond Band Masking: Decomposition-Guided Self-Supervised Learning for Hyperspectral Images</em>, masks in a decomposed representation space instead. Decomposition separates the data into coefficients and components, where each component is a complete spectral signature carrying inter-band correlation structure. Masking entire components creates a uniform reconstruction task that exploits structured redundancy rather than fighting it.</p>
+        <p>Across 15 decomposition methods, spanning generic techniques (PCA, NMF, ICA, K-Means) and hyperspectral unmixing approaches (VCA+FCLS, SISAL+SUnSAL), inter-component correlation structure strongly predicts masking resilience. On tree species classification, pretraining on 2M unlabeled NEON samples improves F1 by 15% over supervised baselines on an imbalanced label distribution.</p>
+
+        <h3 style="margin-top:36px">Benchmarking and Routing Large Language Models</h3>
+        <p class="meta">Applied Scientist Internship &middot; Amazon, Seattle &middot; Summer 2026</p>
+        <p>A deployment rarely has a single right model. It holds many, spanning an order of magnitude in price and several-fold in speed, and the model that answers a hard query best is seldom the one that answers an easy query most cheaply. A router turns that spread into an advantage.</p>
+        <p>Evaluating routers offline needs an answer key recording, for every query and model, what came out and whether it was right. Building one is expensive, so released keys label whichever axes their authors needed, and the axis consistently missing is time. I built a key that carries all three: 402,510 labeled cells over 15 models from 11 vendors and 18 public datasets, each with a correctness score, a dollar cost from dated list prices, and a served-model latency, over a pool including closed commercial flagships.</p>
+        <p>With both resource axes measured on the same cells, two facts appear that a single-axis key cannot show. The axes disagree, with the cheapest correct and fastest correct model differing on 34.1% of solvable queries. And per-model averages cannot recover that: a policy knowing each model's average cost but nothing about the query lands within 4.9% of optimal cost yet overspends latency by 26.6%. Cost is nearly a per-model constant a price list captures, while latency turns on the query-by-model interaction.</p>
+        <p>The router I built combines a nearest-neighbor estimate of per-model correctness with a learned head, penalizing cost and latency together at a ratio the operator sets. At matched accuracy it saves 20.5% of cost and 7.9% of latency, on all 20 seeds and both axes at once. Every route returns a recommendation card rather than just a model: the choice, its odds of being correct, the alternatives, and whether a person should check the answer. Its confidence is calibrated well enough to raise accuracy from 77.9% to 89.1% at 80% coverage.</p>
+
+        <h3 style="margin-top:36px">Hyperspectral Imaging for Plant-Soil Systems</h3>
+        <p class="meta">Machine Learning and Sensing Lab</p>
+        <p>Traditional soil moisture sensors give point measurements, but the gradients that drive rhizosphere processes happen at the millimeter scale. I developed the first demonstrated approach for pixel-level soil water content mapping in rhizosphere systems, training a DenseNet-inspired CNN on controlled hyperspectral images of soil with measured water contents, then transferring it to rhizoboxes containing growing peanut and sweet corn.</p>
+        <p>Two problems had to be solved for that transfer. A systematic intensity difference between setups, which I addressed with a spectral scaling correction, and interference from root spectral signatures, which turns out to be species-dependent: sweet corn's thick roots produce a 73% prediction range reduction when filtered, against 34% for peanut's thinner architecture.</p>
+        <p>The model reaches R&sup2;=0.89 and MAE=1.58% at quadrant level across 28 rhizoboxes, mapping water content at roughly 0.5mm effective pixel spacing, a 26 to 45% improvement over traditional regression methods. The work builds on the <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/MAYDHT">HyperPRI dataset</a>, which I led the creation of.</p>
+      </div>
+    </article>
+
+    <!-- ---------- EXPERIENCE ---------- -->
+    <article data-page="experience">
+      <h2>Experience</h2>
+      <div class="bar"></div>
+
+      <h4 style="margin-top:0">Industry</h4>
+      <ul class="timeline">
+        <li>
+          <h3>Applied Scientist Intern &mdash; Amazon</h3>
+          <p class="meta">Seattle, WA &middot; June 2026 &ndash; August 2026</p>
+          <p>Built a benchmark labeling correctness, dollar cost, and served latency for every query-model pair across 15 models and 18 datasets, and a query-level router that matches the best single model's accuracy while cutting 20.5% of cost and 7.9% of latency.</p>
+        </li>
+        <li>
+          <h3>Applied Scientist Intern &mdash; Amazon</h3>
+          <p class="meta">Seattle, WA &middot; June 2025 &ndash; August 2025</p>
+          <p>Built an agentic system using vision-language models via AWS Bedrock to analyze financial reports, reading plots, tables, and markdown together to generate explanations and recommendations across interconnected business metrics.</p>
+        </li>
+        <li>
+          <h3>Google Summer of Code Contributor &mdash; NumFOCUS</h3>
+          <p class="meta">June 2025 &ndash; August 2025</p>
+          <p>Selected from roughly 8% of applicants to build <a href="https://github.com/GatorSense/NeonCrops">NeonCrops</a>, an open-source pipeline and multimodal dataset of NEON tree crowns for ecological research.</p>
+        </li>
+        <li>
+          <h3>Machine Learning Intern &mdash; USDA Appalachian Fruit Research</h3>
+          <p class="meta">Kearneysville, WV (remote) &middot; June 2023 &ndash; August 2023</p>
+          <p>Developed a UNet-based semantic segmentation model separating leafless apple trees from visually similar background trees, supporting orchard automation.</p>
+        </li>
+      </ul>
+
+      <h4>Education</h4>
+      <ul class="timeline">
+        <li>
+          <h3>PhD, Electrical and Computer Engineering</h3>
+          <p class="meta">University of Florida &middot; 2021 &ndash; present</p>
+          <p>Thesis: <em>Beyond Band Masking: Decomposition-Guided Self-Supervised Learning for Hyperspectral Images</em></p>
+        </li>
+        <li>
+          <h3>MS, Electrical and Computer Engineering</h3>
+          <p class="meta">University of Florida &middot; 2019 &ndash; 2021</p>
+        </li>
+        <li>
+          <h3>BS, Electronics and Communication Engineering</h3>
+          <p class="meta">Kurukshetra University &middot; 2014 &ndash; 2018</p>
+        </li>
+      </ul>
+
+      <h4>Teaching</h4>
+      <ul class="timeline">
+        <li>
+          <h3>Supervised Teacher, Fundamentals of Machine Learning</h3>
+          <p class="meta">University of Florida, EEL 5840/4930 &middot; Fall 2021</p>
+          <p>Delivered a lecture on PyTorch to 175 students, designed and graded assignments, and held weekly office hours.</p>
+        </li>
+        <li>
+          <h3>Instructor, Survey of Machine Learning</h3>
+          <p class="meta">UF CPET Precollege Scholars Program &middot; July 2022</p>
+          <p>Designed and taught an introductory course for high-school students, with interactive notebooks covering regression, image processing, and classification.</p>
+        </li>
+      </ul>
+    </article>
+
+    <!-- ---------- PROJECTS ---------- -->
+    <article data-page="projects">
+      <h2>Projects</h2>
+      <div class="bar"></div>
+      <div class="tiles">
+
+        <div class="tile edge">
+          <h3>NeonCrops</h3>
+          <p>An end-to-end pipeline turning NEON airborne imagery into labeled per-crown image arrays across RGB, hyperspectral, and LiDAR. Ships 41,738 tree crowns spanning 234 species and 38 sites, released on Hugging Face.</p>
+          <a class="go" href="https://github.com/GatorSense/NeonCrops">GitHub &rarr;</a>
+        </div>
+
+        <div class="tile edge">
+          <h3>NeonTreeClassification</h3>
+          <p>Classification pipelines built on the NEON crown data, combining RGB, 369-band hyperspectral, and LiDAR canopy height models for multimodal tree species identification.</p>
+          <a class="go" href="https://github.com/GatorSense/NeonTreeClassification">GitHub &rarr;</a>
+        </div>
+
+        <div class="tile edge">
+          <h3>HyperPRI</h3>
+          <p>The first temporal RGB and hyperspectral rhizobox imagery dataset for underground plant root study, released publicly alongside UNet baselines for root-soil segmentation.</p>
+          <a class="go" href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/MAYDHT">Dataset &rarr;</a>
+        </div>
+
+        <div class="tile edge">
+          <h3>Repetitive Action Counting</h3>
+          <p>A multi-stream model combining RGB video (MoviNets backbone) with pose estimation (YOLOv7) to count exercise repetitions and classify which exercise is being performed.</p>
+        </div>
+
+        <div class="tile edge">
+          <h3>Indian Licence Plate Recognition</h3>
+          <p>An ANPR system classifying vehicle, plate type, and characters in a single model at 25 fps, pairing semantic segmentation for localization with LPRNet for character recognition.</p>
+          <a class="go" href="https://arxiv.org/abs/2111.06054">arXiv &rarr;</a>
+        </div>
+
+        <div class="tile edge">
+          <h3>F1-tenth Self-Driving Car</h3>
+          <p>Wall following, mapping and localization, and SLAM-based path planning on a one-tenth scale F1 car, running ROS on an NVIDIA Jetson TX-2 with LiDAR and stereo cameras.</p>
+          <a class="go" href="https://f1tenth.org/">F1tenth &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- ---------- PUBLICATIONS ---------- -->
+    <article data-page="publications">
+      <h2>Publications</h2>
+      <div class="bar"></div>
+
+      <h4 style="margin-top:0">Journal Articles</h4>
+      <ul class="pubs">
+        <li>Graves, S. J., <strong>Chowdhry, R.</strong>, Zhou, M., Harmon, I., Weinstein, B., &hellip; &amp; Bohlman, S. A. (2025). Facilitating macrosystem biology with organismal-scale airborne remote sensing: Challenges and opportunities. <span class="venue">Functional Ecology.</span></li>
+        <li>Chang, S. J., <strong>Chowdhry, R.</strong>, Song, Y., &hellip; &amp; Zare, A. (2024). HyperPRI: A dataset of hyperspectral images for underground plant root study. <span class="venue">Computers and Electronics in Agriculture, 225, 109307.</span> <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/MAYDHT">Dataset</a></li>
+      </ul>
+
+      <h4>Preprints</h4>
+      <ul class="pubs">
+        <li>Tanwar, S., Tiwari, A., &amp; <strong>Chowdhry, R.</strong> (2021). Indian Licence Plate Dataset in the wild. <span class="venue">arXiv preprint.</span> <a href="https://arxiv.org/abs/2111.06054">arXiv:2111.06054</a></li>
+      </ul>
+
+      <h4>Presentations</h4>
+      <ul class="pubs">
+        <li><strong>Chowdhry, R.</strong> &amp; Zare, A. (2022). Hyperspectral Signals in the Soil. <span class="venue">Poster, NSF Signals in the Soils Annual Workshop.</span></li>
+      </ul>
+
+      <h4>Datasets</h4>
+      <ul class="pubs">
+        <li><strong>NeonCrops</strong> &mdash; multimodal NEON tree crown dataset, 234 species and 41,738 crowns across 38 sites. <a href="https://github.com/GatorSense/NeonCrops">GitHub</a></li>
+        <li><strong>HyperPRI</strong> &mdash; hyperspectral images for underground plant root study. <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/MAYDHT">Harvard Dataverse</a></li>
+      </ul>
+    </article>
+
+  </main>
+</div>
+
+<script>
+(function () {
+  var tabs  = document.querySelectorAll('.tabs button');
+  var pages = document.querySelectorAll('article[data-page]');
+
+  function show(name) {
+    var found = false;
+    pages.forEach(function (p) {
+      var on = p.dataset.page === name;
+      p.classList.toggle('on', on);
+      if (on) found = true;
+    });
+    tabs.forEach(function (t) { t.classList.toggle('on', t.dataset.tab === name); });
+    if (found) { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    return found;
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      show(t.dataset.tab);
+      history.replaceState(null, '', '#' + t.dataset.tab);
+    });
+  });
+
+  // let "Read more" links inside the panels jump to a tab
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var name = a.getAttribute('href').slice(1);
+      if (show(name)) { e.preventDefault(); history.replaceState(null, '', '#' + name); }
+    });
+  });
+
+  show((location.hash || '#about').slice(1)) || show('about');
+})();
+</script>
+
+</body>
+</html>
