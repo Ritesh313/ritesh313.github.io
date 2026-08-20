@@ -91,10 +91,16 @@ a { color: var(--link); }
   border-radius: 999px;
 }
 
+.sidebar .affil {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
 .sidebar hr {
   border: 0;
   border-top: 1px solid var(--rule);
-  margin: 22px 0;
+  margin: 20px 0;
 }
 
 .info {
@@ -217,6 +223,14 @@ p:last-child { margin-bottom: 0; }
 
 .meta { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
 
+.footnote {
+  margin-top: 34px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 14.5px;
+}
+
 /* ---------------- tiles ---------------- */
 
 .tiles {
@@ -302,7 +316,8 @@ p:last-child { margin-bottom: 0; }
   <aside class="sidebar">
     <img class="avatar" src="images/profile.jpg" alt="Ritesh Chowdhry">
     <h1>Ritesh Chowdhry</h1>
-    <span class="badge">PhD Candidate, ECE</span>
+    <span class="badge">Machine Learning Researcher</span>
+    <p class="affil">University of Florida</p>
 
     <hr>
 
@@ -325,8 +340,8 @@ p:last-child { margin-bottom: 0; }
     <div class="info">
       <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg></div>
       <div>
-        <div class="lbl">Curriculum Vitae</div>
-        <div class="val"><a href="documents/Ritesh_CV.pdf">Download PDF</a></div>
+        <div class="lbl">Resume</div>
+        <div class="val"><a href="documents/Ritesh_Resume.pdf">Download PDF</a></div>
       </div>
     </div>
 
@@ -479,6 +494,8 @@ p:last-child { margin-bottom: 0; }
           <p>Designed and taught an introductory course for high-school students, with interactive notebooks covering regression, image processing, and classification.</p>
         </li>
       </ul>
+
+      <p class="footnote">Prefer the one-page version? <a href="documents/Ritesh_Resume.pdf">Download my resume</a>. For the full academic record, including all publications, presentations, and awards, see my <a href="documents/Ritesh_CV.pdf">complete CV</a>.</p>
     </article>
 
     <!-- ---------- PROJECTS ---------- -->
