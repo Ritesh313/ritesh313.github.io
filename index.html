@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ritesh Chowdhry</title>
-<meta name="description" content="Ritesh Chowdhry, PhD candidate in Electrical and Computer Engineering at the University of Florida. Self-supervised learning for hyperspectral imagery, and benchmarking and routing large language models.">
+<meta name="description" content="Ritesh Chowdhry, machine learning researcher with a PhD in Electrical and Computer Engineering from the University of Florida. Self-supervised learning for hyperspectral imagery, and benchmarking and routing large language models.">
 
 <style>
 /* ==================================================================
@@ -231,6 +231,37 @@ p:last-child { margin-bottom: 0; }
   font-size: 14.5px;
 }
 
+/* ---------------- callout + news ---------------- */
+
+.notice {
+  margin: 22px 0 0;
+  padding: 14px 18px;
+  max-width: 68ch;
+  background: var(--tile);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  font-size: 15.2px;
+}
+.notice strong { color: var(--accent-strong); }
+
+.news { list-style: none; margin: 0; padding: 0; max-width: 68ch; }
+.news li {
+  display: flex;
+  gap: 16px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 15px;
+}
+.news li:last-child { border-bottom: 0; }
+.news .when {
+  flex: 0 0 96px;
+  padding-top: 2px;
+  color: var(--muted);
+  font-size: 13.5px;
+  letter-spacing: .02em;
+}
+
 /* ---------------- tiles ---------------- */
 
 .tiles {
@@ -370,12 +401,24 @@ p:last-child { margin-bottom: 0; }
       <div class="bar"></div>
 
       <div class="prose">
-        <p>I am a PhD candidate in Electrical and Computer Engineering at the University of Florida, working in the Machine Learning and Sensing Lab. My research is on self-supervised learning for high-dimensional sensing data, mainly hyperspectral imagery, where labels are scarce and the structure of the data does not look much like natural images.</p>
+        <p>I recently defended my PhD in Electrical and Computer Engineering at the University of Florida, where I worked with Dr. Alina Zare in the Machine Learning and Sensing Lab. My dissertation is on self-supervised learning for high-dimensional sensing data, mainly hyperspectral imagery, where labels are scarce and the structure of the data does not look much like natural images.</p>
 
         <p>More recently I have worked on evaluating and routing large language models under real cost and latency constraints, during two Applied Scientist internships at Amazon. Alongside both, I build open-source datasets and tools so other researchers can use this kind of data without absorbing the preprocessing burden first.</p>
 
-        <p>I am currently looking for applied scientist and research scientist roles.</p>
       </div>
+
+      <!-- Job search status. Update or remove once a position is accepted. -->
+      <div class="notice">
+        <strong>Looking for roles.</strong> I am seeking applied scientist and research scientist positions starting January 2027. If you are hiring, I would be glad to hear from you at <a href="mailto:riteshchowdhry@ufl.edu">riteshchowdhry@ufl.edu</a>.
+      </div>
+
+      <h4>News</h4>
+      <ul class="news">
+        <li><span class="when">Oct 2026</span><span>Defended my PhD dissertation, <em>Beyond Band Masking: Decomposition-Guided Self-Supervised Learning for Hyperspectral Images</em>.</span></li>
+        <li><span class="when">Jun&ndash;Aug 2026</span><span>Applied Scientist Intern at Amazon, Seattle: cost- and latency-aware benchmarking and routing for large language models.</span></li>
+        <li><span class="when">Jun&ndash;Aug 2025</span><span>Applied Scientist Intern at Amazon, and Google Summer of Code contributor with NumFOCUS building <a href="https://github.com/GatorSense/NeonCrops">NeonCrops</a>.</span></li>
+        <li><span class="when">2025</span><span>Co-authored <em>Facilitating macrosystem biology with organismal-scale airborne remote sensing</em> in Functional Ecology.</span></li>
+      </ul>
 
       <h4>What I Work On</h4>
       <div class="tiles">
@@ -414,10 +457,11 @@ p:last-child { margin-bottom: 0; }
 
       <div class="prose">
         <h3>Self-Supervised Learning for Hyperspectral Imagery</h3>
-        <p class="meta">Doctoral thesis &middot; Machine Learning and Sensing Lab</p>
+        <p class="meta">PhD dissertation &middot; Defended October 2026 &middot; Machine Learning and Sensing Lab</p>
         <p>Hyperspectral images carry hundreds of spectral bands per pixel, and labels are scarce and expensive. Masked autoencoders are the obvious way to learn from the unlabeled majority, but they were designed for natural images, where masking a patch removes information that genuinely has to be inferred.</p>
         <p>Spectral bands do not behave that way. Adjacent bands are highly correlated, so masking one is trivially recoverable from its neighbors. Isolated absorption features are the opposite: nothing else predicts them, so masking one makes reconstruction impossible. Band-level masking therefore produces a training signal of wildly uneven difficulty, most of which teaches the model nothing.</p>
-        <p>My thesis, <em>Beyond Band Masking: Decomposition-Guided Self-Supervised Learning for Hyperspectral Images</em>, argues that the lever is not a cleverer masking rule but the representation space you mask in. Decomposing the spectrum first, then masking whole components rather than individual bands, turns an uneven reconstruction task into a uniform one that exploits the redundancy structure instead of fighting it.</p>
+        <p>My dissertation, <em>Beyond Band Masking: Decomposition-Guided Self-Supervised Learning for Hyperspectral Images</em>, argues that the lever is not a cleverer masking rule but the representation space you mask in. Decomposing the spectrum first, then masking whole components rather than individual bands, turns an uneven reconstruction task into a uniform one that exploits the redundancy structure instead of fighting it.</p>
+        <p>Masking in the decomposed space has a few practical benefits. Every masked target is now informative, so the pretraining signal goes into learning rather than into predicting what a neighbouring band already gives away. The redundancy that made band masking trivial becomes the thing the model has to exploit, since reconstructing a whole component means understanding how it co-varies with the ones that remain. And the change lives entirely in the masking step, so it drops into a standard masked-autoencoder recipe without touching the backbone. On the SpectralEarth benchmark it beats input-space masking on all six semantic segmentation tasks.</p>
 
         <h3 style="margin-top:36px">Benchmarking and Routing Large Language Models</h3>
         <p class="meta">Applied Scientist Internship &middot; Amazon, Seattle &middot; Summer 2026</p>
@@ -466,8 +510,8 @@ p:last-child { margin-bottom: 0; }
       <ul class="timeline">
         <li>
           <h3>PhD, Electrical and Computer Engineering</h3>
-          <p class="meta">University of Florida &middot; 2021 &ndash; present</p>
-          <p>Thesis: <em>Beyond Band Masking: Decomposition-Guided Self-Supervised Learning for Hyperspectral Images</em></p>
+          <p class="meta">University of Florida &middot; 2021 &ndash; 2026 &middot; Advisor: Dr. Alina Zare</p>
+          <p>Dissertation: <em>Beyond Band Masking: Decomposition-Guided Self-Supervised Learning for Hyperspectral Images</em> (defended October 2026)</p>
         </li>
         <li>
           <h3>MS, Electrical and Computer Engineering</h3>
@@ -545,7 +589,12 @@ p:last-child { margin-bottom: 0; }
       <h2>Publications</h2>
       <div class="bar"></div>
 
-      <h4 style="margin-top:0">Journal Articles</h4>
+      <h4 style="margin-top:0">Dissertation</h4>
+      <ul class="pubs">
+        <li><strong>Chowdhry, R.</strong> (2026). Beyond Band Masking: Decomposition-Guided Self-Supervised Learning for Hyperspectral Images. <span class="venue">Ph.D. dissertation, University of Florida.</span></li>
+      </ul>
+
+      <h4>Journal Articles</h4>
       <ul class="pubs">
         <li>Graves, S. J., <strong>Chowdhry, R.</strong>, Zhou, M., Harmon, I., Weinstein, B., &hellip; &amp; Bohlman, S. A. (2025). Facilitating macrosystem biology with organismal-scale airborne remote sensing: Challenges and opportunities. <span class="venue">Functional Ecology.</span></li>
         <li>Chang, S. J., <strong>Chowdhry, R.</strong>, Song, Y., &hellip; &amp; Zare, A. (2024). HyperPRI: A dataset of hyperspectral images for underground plant root study. <span class="venue">Computers and Electronics in Agriculture, 225, 109307.</span> <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/MAYDHT">Dataset</a></li>
